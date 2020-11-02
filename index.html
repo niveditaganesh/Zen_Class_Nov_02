@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+
+    <title>REST COUNTRIES - WEATHER API</title>
+
+    <style>
+        #div1{
+            width:25rem;
+            display:inline-block;
+            background-image: url('https://blog.hdwallsource.com/wp-content/uploads/2014/11/free-gradient-wallpaper-26032-26717-hd-wallpapers.jpg');
+            margin:40px;padding:10px
+        }
+        #capn{
+            display:inline;
+        }
+        #image{
+    width: 21rem;
+    height: 14rem;
+   
+}
+.card-title,#capn,#button,#list{
+    text-align: center;
+}
+.center {
+  margin: 0px auto;
+  text-align: left;
+}
+body{
+    
+    background-image: url('https://cdn.wallpapersafari.com/12/63/DHw2Yf.jpg');
+    font-family: 'PT Serif', serif;
+
+margin:10px;padding:10px
+}
+.modz{
+    color:white;
+    font-size:x-large;
+    font-weight: 700;
+    /* background-color: black; */
+}
+    </style>
+
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" 
+    crossorigin="anonymous"></script>
+
+    
+
+    
+<script src='script.js'></script>
+
+<script>
+    $(function () {
+   $('[data-toggle="popover"]').popover()
+ })
+ $('.modz').on('shown.bs.modal', function () {
+   $('.mods').trigger('focus')
+ })
+ $(document).ready(function(){
+   $(".mods").click(function(){
+     $("myModal"+i).modal("toggle");
+   });
+ });
+ $(document).ready(function(){
+   $(".mods").click(function(){
+     $("nextModal"+i).modal("toggle");
+   });
+ });
+     </script>
+</body>
+</html>
