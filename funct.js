@@ -12,10 +12,7 @@ for(i=0;i<data.length;i++){
  var title=`<b>${data[i].name}</b>`;
  var info=`Region:<b>${data[i].region}</b><br>` 
  var capital=`Capital: <b>${data[i].capital}</b>`;
- if(lat !==undefined || lon !==undefined){
- //console.log(data[i].flag)
- weatherResponse= await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_key}&units=imperial`)
- let weatherdata= await weatherResponse.json();
+ 
  //console.log(weatherdata.main);
 
 var div1=document.createElement('div');
@@ -34,19 +31,32 @@ var div1=document.createElement('div');
        image.setAttribute('class','card-img-top');
        image.setAttribute('src',`${data[i].flag}`)
        image.setAttribute('alt',`${data[i].flag}`)
-       var capn=document.createElement('p');
-       capn.setAttribute('class','card-text ');
+       
+       var list=document.createElement('ul');
+       list.setAttribute('id','list')
+       list.setAttribute('class','list-group list-group-flush')
+
+       var capn=document.createElement('li');
+       capn.setAttribute('class','list-group-item ');
        capn.setAttribute('id','capn')
        capn.innerHTML=capital;
-       var list=document.createElement('ul');
-       list.setAttribute('class','list-group list-group-flush')
+
        var line=document.createElement('li')
        line.setAttribute('class','list-group-item');
        line.innerHTML=info;
        var line2=document.createElement('a')
-       line2.href='#'
-       line2.setAttribute('class','card-link mods pops btn btn-primary');
+       line2.href='#';
+       line2.id='button1'
+       line2.setAttribute('class','card-link mods pops btn btn-primary container-fluid');
        line2.innerHTML='Click for Weather';
+       line2.onclick=weather;
+      async function weather(lat,lon){
+        if(lat !==undefined || lon !==undefined){
+            //console.log(data[i].flag)
+            weatherResponse= await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_key}&units=imperial`)
+            let weatherdata= await weatherResponse.json();
+            console.log(weatherdata)
+     
        line2.setAttribute("data-placement","top")
        line2.setAttribute('data-toggle','modal')
       line2.setAttribute('data-target',"#nextModal"+i)
@@ -97,14 +107,14 @@ var div1=document.createElement('div');
    mod1.append(mod_header1,mod_body1,mod_footer1)
    document.body.append(mod1)
 
-       list.append(line)
-       div3.append(image,capn,list,line2)
+       list.append(capn,line)
+       div3.append(image,list,line2)
        div1.append(div2,div3)
        document.body.append(div1)
     }
 }
 }
-
+}
 catch(error){
         console.log(error)
     }
